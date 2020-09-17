@@ -284,7 +284,7 @@ public final class Bootstrap {
      * Load daemon.
      */
     private void load(String[] arguments) throws Exception {
-        //z 调用catalina的load方法
+        //z 调用catalina的load方法,start命令 无其他参数
         // Call the load() method
         String methodName = "load";
         Object param[];
@@ -439,7 +439,7 @@ public final class Bootstrap {
     public static void main(String args[]) {
 
         synchronized (daemonLock) {
-            //z 这里很奇怪，不知道为啥这些变量调用两次main是共享的
+            //z 这里很奇怪，不知道为啥这些变量,调用两次main是共享的
             if (daemon == null) {
                 // Don't set daemon until init() has completed
                 Bootstrap bootstrap = new Bootstrap();

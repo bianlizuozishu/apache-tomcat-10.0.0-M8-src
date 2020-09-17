@@ -1,1 +1,5 @@
 ClassLoader:null,common,server,shared
+
+catalina.parentClassLoader=shared
+
+catalina.load

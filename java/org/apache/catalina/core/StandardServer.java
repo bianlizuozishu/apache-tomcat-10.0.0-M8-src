@@ -1007,7 +1007,9 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         super.initInternal();
 
         // Initialize utility executor
+        //z 创建Catalina-utility- 调度线程
         reconfigureUtilityExecutor(getUtilityThreadsInternal(utilityThreads));
+        //z jmx相关略过
         register(utilityExecutor, "type=UtilityExecutor");
 
         // Register global String cache

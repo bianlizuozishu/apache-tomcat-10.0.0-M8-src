@@ -583,6 +583,8 @@ public class Catalina {
             // Load loader
             String loaderClassName = generatedCodePackage + ".DigesterGeneratedCodeLoader";
             try {
+                //z apache commons家族中的一个xml解析器，这里直接copy过来的而不是ant依赖
+                //z 主要解析config/server.xml 里边有tomcat的基本结构 server,service(connector,engine(Host))
                 Digester.GeneratedCodeLoader loader =
                         (Digester.GeneratedCodeLoader) Catalina.class.getClassLoader().loadClass(loaderClassName).newInstance();
                 Digester.setGeneratedCodeLoader(loader);
@@ -712,7 +714,6 @@ public class Catalina {
         }
     }
 
-
     /**
      * Start a new server instance.
      */
@@ -726,10 +727,13 @@ public class Catalina {
         long t1 = System.nanoTime();
 
         // Before digester - it may be needed
+        // jndi 淘汰产品没啥用
         initNaming();
 
         // Parse main server.xml
+        //z 解析config/server.xml
         parseServerXml(true);
+        //z 这里解析完server.xml 就会实例化server对象，如果xml里没配置，则tomcat结束运行
         Server s = getServer();
         if (s == null) {
             return;
@@ -740,9 +744,18 @@ public class Catalina {
         getServer().setCatalinaBase(Bootstrap.getCatalinaBaseFile());
 
         // Stream redirection
+        //z 这里主要是初始化了一个SystemLogHandler，调用SystemLogHandler.startCapture()方法可以阻断sysout的输出存储在stack中，
+        // 然后调用 SystemLogHandler.stopCapture() 一次性把日志输出，不知道具体是为了啥这么做。
+        // 可能是让代码可以让每段代码自定义输出的内容
         initStreams();
 
+        /*SystemLogHandler.startCapture();
+        System.out.println("1");
+        System.out.println("2");
+        System.out.println(SystemLogHandler.stopCapture());*/
+
         // Start the new server
+        //z 这里getServer获得的实例对象是 org.apache.catalina.core.StandardServer 在catalina中直接写死的
         try {
             getServer().init();
         } catch (LifecycleException e) {
