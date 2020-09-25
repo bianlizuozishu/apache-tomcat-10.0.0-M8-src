@@ -1026,6 +1026,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         // Register the naming resources
         globalNamingResources.init();
 
+        //z 这里实在没看明白是干啥的
         // Populate the extension validator with JARs from common and shared
         // class loaders
         if (getCatalina() != null) {
