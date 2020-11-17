@@ -60,6 +60,7 @@ import org.apache.tomcat.util.buf.StringCache;
 import org.apache.tomcat.util.modeler.Registry;
 import org.apache.tomcat.util.res.StringManager;
 import org.apache.tomcat.util.threads.TaskThreadFactory;
+import z.ZComponentsList;
 
 
 /**
@@ -1057,6 +1058,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         }
         // Initialize our defined Services
         for (Service service : services) {
+            ZComponentsList.l.add(service);
             service.init();
         }
     }

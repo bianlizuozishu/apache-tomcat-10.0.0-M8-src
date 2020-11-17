@@ -52,6 +52,7 @@ import org.apache.tomcat.util.log.SystemLogHandler;
 import org.apache.tomcat.util.res.StringManager;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
+import z.ZComponentsList;
 
 
 /**
@@ -718,6 +719,8 @@ public class Catalina {
      * Start a new server instance.
      */
     public void load() {
+
+        ZComponentsList.l.add(this);
 
         if (loaded) {
             return;

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.catalina.core.StandardEngine</OriginalElement>
+  <nodes>
+    <node x="269.25" y="0.0">javax.management.MBeanRegistration</node>
+    <node x="65.5" y="424.0">org.apache.catalina.core.StandardEngine</node>
+    <node x="160.25" y="318.0">org.apache.catalina.core.ContainerBase</node>
+    <node x="18.75" y="212.0">org.apache.catalina.Container</node>
+    <node x="65.25" y="0.0">org.apache.catalina.Lifecycle</node>
+    <node x="179.0" y="212.0">org.apache.catalina.util.LifecycleMBeanBase</node>
+    <node x="115.75000000000001" y="106.0">org.apache.catalina.util.LifecycleBase</node>
+    <node x="0.0" y="318.0">org.apache.catalina.Engine</node>
+    <node x="300.75" y="106.0">org.apache.catalina.JmxEnabled</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.catalina.util.LifecycleBase" target="org.apache.catalina.Lifecycle">
+      <point x="0.0" y="-28.0" />
+      <point x="198.25" y="81.0" />
+      <point x="162.0" y="81.0" />
+      <point x="32.25" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.core.ContainerBase" target="org.apache.catalina.util.LifecycleMBeanBase">
+      <point x="41.25" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.Container" target="org.apache.catalina.Lifecycle">
+      <point x="0.0" y="-28.0" />
+      <point x="83.25000000000001" y="81.0" />
+      <point x="97.5" y="81.0" />
+      <point x="-32.25" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.util.LifecycleMBeanBase" target="org.apache.catalina.util.LifecycleBase">
+      <point x="-52.5" y="-28.0" />
+      <point x="231.5" y="187.0" />
+      <point x="198.25" y="187.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.core.ContainerBase" target="org.apache.catalina.Container">
+      <point x="-41.25" y="-28.0" />
+      <point x="201.5" y="293.0" />
+      <point x="115.5" y="293.0" />
+      <point x="32.25" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.util.LifecycleMBeanBase" target="org.apache.catalina.JmxEnabled">
+      <point x="52.5" y="-28.0" />
+      <point x="336.5" y="187.0" />
+      <point x="369.75" y="187.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.core.StandardEngine" target="org.apache.catalina.Engine">
+      <point x="-43.5" y="-28.0" />
+      <point x="109.0" y="399.0" />
+      <point x="55.0" y="409.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.Engine" target="org.apache.catalina.Container">
+      <point x="0.0" y="-28.0" />
+      <point x="-32.25" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.JmxEnabled" target="javax.management.MBeanRegistration">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="org.apache.catalina.core.StandardEngine" target="org.apache.catalina.core.ContainerBase">
+      <point x="43.5" y="-28.0" />
+      <point x="196.0" y="399.0" />
+      <point x="242.75" y="399.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="235.5" y="240.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

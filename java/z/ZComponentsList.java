@@ -15,8 +15,30 @@
  * limitations under the License.
  */
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("周");
+package z;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 存储各种组件对象方便debug
+ */
+public class ZComponentsList {
+    public static List<Object> l = new ArrayList<>();
+
+
+    /**
+     * 这里tomcat启动之后10s开始debug
+     */
+    public static void seeObject(){
+        new Thread(() -> {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            ZComponentsList.l.add(null);
+            System.out.println("end");
+        }).start();
     }
 }

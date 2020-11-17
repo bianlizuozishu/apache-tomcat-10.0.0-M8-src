@@ -32,6 +32,7 @@ import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.apache.catalina.startup.ClassLoaderFactory.RepositoryType;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
+import z.ZComponentsList;
 
 /**
  * Bootstrap loader for Catalina.  This application constructs a class loader
@@ -430,6 +431,8 @@ public final class Bootstrap {
     }
 
 
+
+
     /**
      * Main method and entry point when starting Tomcat via the provided
      * scripts.
@@ -437,6 +440,10 @@ public final class Bootstrap {
      * @param args Command line arguments to be processed
      */
     public static void main(String args[]) {
+
+        ZComponentsList.l.add(daemon);
+
+        ZComponentsList.seeObject();
 
         synchronized (daemonLock) {
             //z 这里很奇怪，不知道为啥这些变量,调用两次main是共享的

@@ -269,6 +269,8 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      * The number of threads available to process start and stop events for any
      * children associated with this container.
      */
+    //z 这个参数貌似是实际启动项目的线程数的配置，启动过程中就是用main线程去启动项目
+    // 如果已经启动由于tomcat有自动部署功能，可能会启动新的线程去热部署项目
     private int startStopThreads = 1;
     protected ExecutorService startStopExecutor;
 
